@@ -20,7 +20,7 @@
   </nav>
 </template>
 <script>
-import { computed } from '@vue/runtime-core'
+import { computed } from 'vue'
 import { useStore } from 'vuex'
 export default {
   name: 'AppTopnav',

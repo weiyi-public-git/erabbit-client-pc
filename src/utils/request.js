@@ -11,7 +11,7 @@ import router from '@/router'
 export const baseURL = 'http://pcapi-xiaotuxian-front-devtest.itheima.net/'
 const instance = axios.create({
   // axios的一些配置, baseURL timeout
-  baseURL: '',
+  baseURL,
   timeout: 5000
 })
 
@@ -27,14 +27,13 @@ instance.interceptors.request.use(config => {
     // 3. 设置token
     config.headers.Authorization = `Bearer ${profile.token}`
   }
-
   return config
 }, err => {
   return Promise.reject(err)
 })
 
 //  res => res.data 取出data数据,将来调用接口的时候直接拿到的就是后台的数据
-instance.interceptors.response.use(res => res.data, (err) => {
+instance.interceptors.response.use(res => res.data, err => {
   // 401 状态码, 进入该函数
   if (err.response && err.response.status === 401) {
     // 1. 清空无效用户信息

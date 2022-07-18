@@ -19,7 +19,6 @@ export default {
 
 <style lang="less" scoped>
 .container {
-  .hoverShadow();
   color:@xtxColor
 }
 </style>>

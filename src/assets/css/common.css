@@ -9,7 +9,7 @@ body {
   height: 100%;
   color: #333;
   min-width: 1240px;
-  font: 1em/1.4 'Microsoft Yahei', 'PingFang SC', 'Avenir', 'Segoe UI', 'Hiragino Sans GB', 'STHeiti', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
+  font: 1em/1.4 "Microsoft Yahei", "PingFang SC", "Avenir", "Segoe UI", "Hiragino Sans GB", "STHeiti", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
 }
 ul,
 h1,
@@ -87,4 +87,13 @@ ul {
   height: 0;
   line-height: 0;
   clear: both;
+}
+.fade-leave-active {
+  position: absolute;
+  width: 100%;
+  transition: opacity 0.5s 0.2s;
+  z-index: 1;
+}
+.fade-leave-to {
+  opacity: 0;
 }

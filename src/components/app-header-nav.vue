@@ -1,7 +1,7 @@
 <template>
   <ul class="app-header-nav">
     <li class="home"><RouterLink to="/">首页</RouterLink></li>
-    <li v-for="item in list" :key="item.id" @mouseenter="show(item)" @mouseleave="hide(item)">
+    <li v-for="item in list" :key="item.id" @mousemove="show(item)" @mouseleave="hide(item)">
       <router-link @click="hide(item)" :to="`/category/${item.id}`">{{ item.name }}</router-link>
       <div class="layer" :class="{open:item.open}">
         <ul>
@@ -45,13 +45,14 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+// <style lang="less" scoped>
 .app-header-nav {
   width: 820px;
   display: flex;
   justify-content: space-around;
   padding-left: 40px;
   position: relative;
+  z-index: 999;
   > li {
     margin-right: 40px;
     width: 38px;
